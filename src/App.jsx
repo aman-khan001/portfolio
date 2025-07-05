@@ -7,6 +7,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
 import Resume from "./components/Resume";
+import Footer from "./components/Footer";
 const App = () => {
   return (
     <div className="relative text-white bg-black/95">
@@ -31,7 +32,7 @@ const App = () => {
         <Contact />
       </section>
 
-      
+      <Footer />
     </div>
   );
 };
