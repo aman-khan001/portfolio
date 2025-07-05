@@ -1,0 +1,25 @@
+@import "tailwindcss";
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+html{
+  scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+section {
+  position: relative;
+  z-index: 1;
+}
+
+.absolute {
+  position: absolute;
+}
