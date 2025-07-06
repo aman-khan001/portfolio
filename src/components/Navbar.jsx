@@ -19,9 +19,9 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-black/95 backdrop-blur-lg z-50">
+    <nav className="fixed top-0 left-0 w-full bg-black/95 backdrop-blur-lg z-50 hover:shadow-[0_0_15px_#22d3ee]">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="text-cyan-400 text-xl font-bold">Aman's Portfolio</div>
+        <div className="text-cyan-400 text-xl hover:text-shadow-[0_0_15px_#22d3ee] font-bold">AMAN KHAN</div>
         <div className="hidden md:flex space-x-6">
           {links.map((link) => (
             <a

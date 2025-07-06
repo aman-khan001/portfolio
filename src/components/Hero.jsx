@@ -21,6 +21,15 @@ export default function Hero() {
         <OrbitControls enableZoom={ false } />
       </Canvas>
 
+      <motion.div 
+        initial={{ opacity: 1, y: 0 }}
+        animate={{ y: [0, 10, 0], opacity: 1 }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-10 right-1 transform -translate-x-1/2 z-20 text-cyan-400 "
+      >
+        ↓ Scroll
+      </motion.div>
+
       <div className="absolute top-1/3 left-10 text-white z-10">
         <motion.h1
           initial={{ y: -50, opacity: 0}}

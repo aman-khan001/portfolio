@@ -5,7 +5,7 @@ export default function ProjectCard({ title, description, tech, image, link, git
     <motion.div
       whileHover={{ scale: 1.05}}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-      className="bg-[rgb(26,26,26)] text-white p-6 rounded-2xl shadow-lg  cursor-pointer w-full mx-auto  h-75 flex flex-col items-center justify-center hover:shadow-cyan-500/50"
+      className="bg-[rgb(26,26,26)] text-white p-6 rounded-2xl shadow-lg  cursor-pointer w-full mx-auto  h-auto flex flex-col items-center justify-center hover:shadow-cyan-500/50"
       >
         <img src={image} alt={`${title} screenshot`} className="w-full h-32 object-cover rounded-lg mb-4" />
         <h3 className="text-xl font-semibold text-cyan-400 mb-2">

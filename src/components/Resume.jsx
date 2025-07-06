@@ -7,7 +7,7 @@ export default function Resume(){
       <motion.a
         href="/Resume-AmanKhan.pdf"
         download
-        className="inline-block px-6 py-3 bg-cyan-500 text-white rounded-lg shadow-lg hover:bg-cyan-600 transition duration-300"
+        className="inline-block px-6 py-3 bg-cyan-600 text-black hover:bg-cyan-400 rounded-lg shadow-lg hover:shadow-[0_0_15px_#22d3ee] transition duration-300"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -75,10 +75,11 @@ export default function Resume(){
         </motion.div>
       </div>
       <div className="mt-16">
-        <h3 className="text-2xl font-semibold mb-4">Interested in working together?</h3>
-        <a href="#contact" className="bg-cyan-600 text-black hover:bg-cyan-400 font-bold px-6 py-3 rounded-lg transition">
-          Hire Me 
-        </a>
+        <h3 className="text-2xl font-semibold mb-5">Interested in working together?</h3>
+        <motion.a 
+          href="#contact" className="bg-cyan-600 text-black hover:bg-cyan-400 font-bold px-6 py-3 rounded-lg hover:shadow-[0_0_15px_#22d3ee] transition">
+          Contact Me 
+        </motion.a>
 
 
       </div>

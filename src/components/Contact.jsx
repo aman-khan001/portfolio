@@ -64,7 +64,7 @@ export default function Contact() {
           ></textarea>
           <button
             type="submit"
-            className="w-full py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-lg transition duration-300 ease-in-out"
+            className="w-full py-3 bg-cyan-600 text-black hover:bg-cyan-400 hover:shadow-[0_0_15px_#22d3ee] font-semibold rounded-lg transition duration-300 ease-in-out"
           >
             Send Message
           </button>
