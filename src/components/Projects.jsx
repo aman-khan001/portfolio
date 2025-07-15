@@ -4,7 +4,7 @@ const projects = [
   {
     title: 'App Portal',
     description: 'A full-stack e-commerce application with user authentication, product management, and a shopping cart.',
-    tech: ['React', 'Tailwind', 'Context', 'API', 'Node.js', 'Express', 'MongoDB'],
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React Query', 'Node.js', 'MongoDB'],
     image: '/projects/app-portal.png',
     link: 'https://preview.codecanyon.net/item/app-portal/full_screen_preview/25416622?_ga=2.175890853.608313247.1751798438-682056470.1751798438',
     github: 'https://github.com/aman-khan001/app-portal',
@@ -12,8 +12,8 @@ const projects = [
 
   {
     title: 'Eventic - Ticket Sales and Event Management System',
-    description: 'My personal portfolio website showcasing my skills, projects, and experience.',
-    tech: ['React', 'Tailwind CSS', 'Framer Motion', 'Three.js'],
+    description: 'A complete event management system offering organizers a powerful dashboard to create, manage, and sell tickets for events — all within a centralized web platform.',
+    tech: ['React', 'Bootstrap', 'JQuery', 'Google Maps API'],
     image: '/projects/eventica.png',
     link: 'https://preview.codecanyon.net/item/eventic-ticket-sales-and-event-management-system/full_screen_preview/29734714?_ga=2.70500631.608313247.1751798438-682056470.1751798438',
     github: 'https://github.com/aman-khan001',

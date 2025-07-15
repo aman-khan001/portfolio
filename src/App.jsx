@@ -27,7 +27,6 @@ const App = () => {
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        viewport={{ once: true }}
         id="home" 
         className="relative"
       >
@@ -38,7 +37,6 @@ const App = () => {
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        viewport={{ once: true }}
         id="about" 
         className="relative py-20"
       >
@@ -48,7 +46,6 @@ const App = () => {
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        viewport={{ once: true }}
         id="skills" 
         className="relative py-20"
       >
@@ -58,7 +55,6 @@ const App = () => {
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        viewport={{ once: true }}
         id="projects" 
         className="relative py-20"
       >
@@ -68,7 +64,6 @@ const App = () => {
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        viewport={{ once: true }}
         id="resume" 
         className="relative py-20"
       >
@@ -78,12 +73,11 @@ const App = () => {
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        viewport={{ once: true }}
         id="contact" 
         className="relative py-30"
       >
         <video
-          className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-50"
+          className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-30"
           autoPlay
           loop
           muted
