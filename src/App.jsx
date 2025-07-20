@@ -19,7 +19,7 @@ const App = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
-      className="relative text-white bg-black/95"
+      className="relative text-white bg-gradient-to-br from-gray-900 to-black"
     >
       <CursorTrail />
       <Navbar />
@@ -76,15 +76,6 @@ const App = () => {
         id="contact" 
         className="relative py-30"
       >
-        <video
-          className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-30"
-          autoPlay
-          loop
-          muted
-        >
-          <source src="/universe.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
         <Contact />
       </motion.section>
 
