@@ -1,72 +1,78 @@
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Float, Html, useGLTF } from "@react-three/drei";
+import { OrbitControls, Float, Html, useGLTF, Environment } from "@react-three/drei";
+import { Suspense } from "react";
 import { motion } from "framer-motion";
-import { Suspense, use } from "react";
 
+// 3D Earth Model
 function EarthModel() {
-  const earth = useGLTF("/models/a_windy_day_opt.glb");
+  const { scene } = useGLTF("/models/a_windy_day_opt.glb");
   return (
     <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-      <primitive object={earth.scene} scale={1.2} position-y={-1} />
+      <primitive object={scene} scale={1.1} position-y={-1} />
     </Float>
   );
 }
 
+// Scroll Indicator
+function ScrollIndicator() {
+  return (
+    <motion.div
+      initial={{ opacity: 1, y: 0 }}
+      animate={{ y: [0, 10, 0], opacity: 1 }}
+      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      className="absolute bottom-6 right-8 z-20 text-cyan-400 text-xl"
+    >
+      ↓ Scroll
+    </motion.div>
+  );
+}
+
+// Hero Section
 export default function Hero() {
   return (
-    <div className="relative h-screen w-full bg-gradient-to-br from-gray-900 to-black">
+    <section className="relative h-screen w-full overflow-hidden bg-gradient-to-br from-gray-900 to-black">
+      {/* 3D Canvas */}
       <Canvas
-        // frameloop="demand"
-        // dpr={[1, 1.5]}
         gl={{ powerPreference: "high-performance", antialias: true }}
         camera={{ position: [0, 0, 2], fov: 50 }}
       >
-        <Suspense
-          fallback={
-              null
-            
-          }
-        >
-          <ambientLight intensity={1} />
+        <Suspense fallback={<Html center><span className="text-white">Loading...</span></Html>}>
+          <ambientLight intensity={0.5} />
           <directionalLight position={[5, 5, 5]} intensity={1} />
+          <Environment preset="city" />
           <EarthModel />
-          <OrbitControls enableZoom={false} />
+          <OrbitControls enableZoom={false} autoRotate />
         </Suspense>
       </Canvas>
 
-      <motion.div
-        initial={{ opacity: 1, y: 0 }}
-        animate={{ y: [0, 10, 0], opacity: 1 }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-10 right-1 transform -translate-x-1/2 z-20 text-cyan-400 "
-      >
-        ↓ Scroll
-      </motion.div>
-
-      <div className="absolute top-1/3 left-10 text-white z-10">
+      {/* Animated Text Overlay */}
+      <div className="absolute top-[30%] left-10 z-10 text-white max-w-2xl px-4">
         <motion.h1
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-5xl font-bold"
+          className="text-5xl md:text-6xl font-extrabold leading-tight"
         >
           Hey, I'm <span className="text-cyan-400">Aman Khan</span>
-          <br />A Full Stack Developer
-          <span className="text-cyan-400">.</span>
+          <br />
+          A Full Stack Developer<span className="text-cyan-400">.</span>
         </motion.h1>
+
         <motion.p
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5, duration: 1 }}
-          className="mt-4 text-xl text-gray-300 max-w-xl"
+          transition={{ delay: 0.4, duration: 1 }}
+          className="mt-5 text-lg md:text-xl text-gray-300"
         >
-          A passionate Full Stack Developer with a knack for creating dynamic
-          and responsive web applications. I love turning ideas into reality
-          through code. Let's build something amazing together!
+          I love creating stunning, fast, and interactive websites and web apps.
+          Let’s build something incredible together.
         </motion.p>
       </div>
-    </div>
+
+      <ScrollIndicator />
+    </section>
   );
 }
 
+// Preload model
 useGLTF.preload("/models/a_windy_day_opt.glb");
