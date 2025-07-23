@@ -23,7 +23,7 @@ export default function Hero() {
       >
         <Suspense
           fallback={
-              <div className="loader ">loading...</div>
+              null
             
           }
         >
