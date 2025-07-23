@@ -15,73 +15,73 @@ import CursorTrail from "./components/CursorTrail";
 
 const App = () => {
   return (
-    <motion.div 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeInOut" }}
+    <div 
+      // initial={{ opacity: 0 }}
+      // animate={{ opacity: 1 }}
+      // transition={{ duration: 0.6, ease: "easeInOut" }}
       className="relative text-white bg-gradient-to-br from-gray-900 to-black"
     >
       <CursorTrail />
       <Navbar />
-      <motion.section 
-        initial={{ opacity: 0, y: -50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+      <section 
+        // initial={{ opacity: 0, y: -50 }}
+        // whileInView={{ opacity: 1, y: 0 }}
+        // transition={{ duration: 0.5, ease: "easeOut" }}
         id="home" 
         className="relative"
       >
         <Hero />
-      </motion.section>
+      </section>
 
-      <motion.section 
-        initial={{ opacity: 0, y: -50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+      <section 
+        // initial={{ opacity: 0, y: -50 }}
+        // whileInView={{ opacity: 1, y: 0 }}
+        // transition={{ duration: 0.5, ease: "easeOut" }}
         id="about" 
         className="relative py-20"
       >
         <About />
-      </motion.section>
-      <motion.section 
-        initial={{ opacity: 0, y: -50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+      </section>
+      <section 
+        // initial={{ opacity: 0, y: -50 }}
+        // whileInView={{ opacity: 1, y: 0 }}
+        // transition={{ duration: 0.5, ease: "easeOut" }}
         id="skills" 
         className="relative py-20"
       >
         <Skills />
-      </motion.section>
-      <motion.section 
-        initial={{ opacity: 0, y: -50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+      </section>
+      <section 
+        // initial={{ opacity: 0, y: -50 }}
+        // whileInView={{ opacity: 1, y: 0 }}
+        // transition={{ duration: 0.5, ease: "easeOut" }}
         id="projects" 
         className="relative py-20"
       >
         <Projects />
-      </motion.section>
-      <motion.section 
-        initial={{ opacity: 0, y: -50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+      </section>
+      <section 
+        // initial={{ opacity: 0, y: -50 }}
+        // whileInView={{ opacity: 1, y: 0 }}
+        // transition={{ duration: 0.5, ease: "easeOut" }}
         id="resume" 
         className="relative py-20"
       >
         <Resume />
-      </motion.section>
-      <motion.section 
-        initial={{ opacity: 0, y: -50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+      </section>
+      <section 
+        // initial={{ opacity: 0, y: -50 }}
+        // whileInView={{ opacity: 1, y: 0 }}
+        // transition={{ duration: 0.5, ease: "easeOut" }}
         id="contact" 
         className="relative py-30"
       >
         <Contact />
-      </motion.section>
+      </section>
 
       <Footer />
       <BackToTop />
-    </motion.div>
+    </div>
   );
 };
 
