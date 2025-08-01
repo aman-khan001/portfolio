@@ -1,17 +1,4 @@
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Float, Html, useGLTF, Environment } from "@react-three/drei";
-import { Suspense } from "react";
 import { motion } from "framer-motion";
-
-// 3D Earth Model
-function EarthModel() {
-  const { scene } = useGLTF("/models/a_windy_day_opt.glb");
-  return (
-    <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-      <primitive object={scene} scale={1.1} position-y={-1} />
-    </Float>
-  );
-}
 
 // Scroll Indicator
 function ScrollIndicator() {
@@ -20,59 +7,64 @@ function ScrollIndicator() {
       initial={{ opacity: 1, y: 0 }}
       animate={{ y: [0, 10, 0], opacity: 1 }}
       transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute bottom-6 right-8 z-20 text-cyan-400 text-xl"
+      className="absolute py-3 bottom-2 w-full bg-cyan-500 text-center  z-20 text-blue-950 text-xl hover:bg-cyan-400 rounded-md shadow-lg hover:shadow-[0_0_15px_#22d3ee]"
     >
       ↓ Scroll
     </motion.div>
   );
 }
 
-// Hero Section
 export default function Hero() {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-gradient-to-br from-gray-900 to-black">
-      {/* 3D Canvas */}
-      <Canvas
-        gl={{ powerPreference: "high-performance", antialias: true }}
-        camera={{ position: [0, 0, 2], fov: 50 }}
-      >
-        <Suspense fallback={<Html center><span className="text-white">Loading...</span></Html>}>
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[5, 5, 5]} intensity={1} />
-          <Environment preset="city" />
-          <EarthModel />
-          <OrbitControls enableZoom={false} autoRotate />
-        </Suspense>
-      </Canvas>
-
-      {/* Animated Text Overlay */}
-      <div className="absolute top-[30%] left-10 z-10 text-white max-w-2xl px-4">
-        <motion.h1
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="text-5xl md:text-6xl font-extrabold leading-tight"
-        >
-          Hey, I'm <span className="text-cyan-400">Aman Khan</span>
-          <br />
-          A Full Stack Developer<span className="text-cyan-400">.</span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4, duration: 1 }}
-          className="mt-5 text-lg md:text-xl text-gray-300"
-        >
-          I love creating stunning, fast, and interactive websites and web apps.
-          Let’s build something incredible together.
-        </motion.p>
+    <div className="relative h-screen w-full bg-gradient-to-br from-gray-900 to-black overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-screen z-9 ">
+        <iframe
+          title="A Windy Day"
+          className="w-full h-full"
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          mozallowfullscreen="true"
+          webkitallowfullscreen="true"
+          src="https://sketchfab.com/models/fb78f4cc938144e6902dd5cff354d525/embed?ui_watermark=0&ui_infos=0&ui_controls=0&autospin=1&autostart=1&transparent=1&camera=0"
+        ></iframe>
       </div>
+      {/* <div className="  overflow-hidden ">
+        <iframe
+          title="A Windy Day"
+          className="w-full mx-auto  h-full  "
+          
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          src="https://sketchfab.com/models/fb78f4cc938144e6902dd5cff354d525/embed?ui_watermark=0&ui_infos=0&ui_controls=0&autospin=1&autostart=1&transparent=1"
+        ></iframe>
+        {/* <iframe
+          title="A Windy Day"
+          className="w-full h-full pointer-events-none"
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          allowFullScreen
+          mozallowfullscreen="true"
+          webkitallowfullscreen="true"
+          src="https://sketchfab.com/models/fb78f4cc938144e6902dd5cff354d525/embed?ui_watermark=0&ui_infos=0&ui_controls=0&autospin=1&autostart=1"
+        /> 
+      </div> */}
 
-      <ScrollIndicator />
-    </section>
+      <div className="absolute d-inline-block top-1/3 left-10 text-white z-10">
+        <h1 className="text-5xl font-bold">
+          Hey, I'm <span className="text-cyan-400">Aman Khan</span>
+          <br />A Full Stack Developer
+          {/* <span className="text-cyan-400">.</span> */}
+        </h1>
+        <p className="mt-4 text-xl text-gray-300 max-w-xl">
+          A passionate Full Stack Developer with a knack for creating dynamic
+          and responsive web applications. Let's build something amazing!
+        </p>
+      </div>
+      <div className="z-10">
+        <a
+          href="#about"
+          className="text-blue-950 text-lg font-semibold scroll hover:underline"
+        >
+          <ScrollIndicator />
+        </a>
+      </div>
+    </div>
   );
 }
-
-// Preload model
-useGLTF.preload("/models/a_windy_day_opt.glb");

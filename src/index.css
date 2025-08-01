@@ -16,7 +16,10 @@ section {
 }
 .absolute {
   position: absolute;
-  color: #26dffc;
+}
+
+.scroll{
+  color: #222 !important;
 }
 .loader {
   position: absolute;
